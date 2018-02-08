@@ -1,0 +1,60 @@
+{
+  "suits": [
+    "Sun",
+    "Cup",
+    "Feather",
+    "Sword"
+  ],
+  "ranks": [
+    {
+      "name": "Ace",
+      "point": 11,
+      "value": 10
+    },
+    {
+      "name": "Three",
+      "point": 10,
+      "value": 9
+    },
+    {
+      "name": "King",
+      "point": 4,
+      "value": 8
+    },
+    {
+      "name": "Horse",
+      "point": 3,
+      "value": 7
+    },
+    {
+      "name": "Queen",
+      "point": 2,
+      "value": 6
+    },
+    {
+      "name": "Seven",
+      "point": 0,
+      "value": 5
+    },
+    {
+      "name": "Six",
+      "point": 0,
+      "value": 4
+    },
+    {
+      "name": "Five",
+      "point": 0,
+      "value": 3
+    },
+    {
+      "name": "Four",
+      "point": 0,
+      "value": 2
+    },
+    {
+      "name": "Two",
+      "point": 0,
+      "value": 1
+    }
+  ]
+}
