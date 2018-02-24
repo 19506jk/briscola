@@ -8,7 +8,6 @@ server.listen(8080, () => console.log('Server listening on port 8080'));
 let newGame = new Game();
 
 io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
+  socket.emit('news', { hans: 'is cool' });
   newGame.addPlayer();
-  console.log('hhhhhh');
 });
