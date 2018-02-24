@@ -32,7 +32,7 @@ class Game {
     const cards = [];
     deck.suits.forEach((suit) => {
       deck.ranks.forEach((rank) => {
-        cards.push(_.assign({}, rank, {suit}));
+        cards.push(_.assign({}, rank, { suit }));
       });
     });
     this.deck = _.shuffle(cards);
@@ -42,7 +42,7 @@ class Game {
     this.playerCount += 1;
   }
 
-  getCards(player) {
+  getCards() {
     const cards = this.deck.splice(0, 8);
     this.playerHands.push(cards);
     return cards;
