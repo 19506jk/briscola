@@ -57,7 +57,7 @@ class Game {
     this.trump = card.suit;
     this.caller = player;
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i += 1) {
       if (_.find(this.playerHands[i], { name: card.name, suit: card.suit })) {
         this.guiltyPlayer = i;
       }
@@ -67,20 +67,19 @@ class Game {
   getRoundResult() {
     let largest = this.currentRound.shift();
     let leadingSuit = largest.info.suit;
-    let point = largest.info.point;
+    let { point } = largest.info;
 
-    let i;
-    for (i = 0; i < this.currentRound.length; i++) {
-      const card = this.currentRound[i];
+    this.currentRound.forEach((card) => {
       const cardValue = card.info.value;
       const cardSuit = card.info.suit;
-      const trump = this.trump;
+      const { trump } = this;
       const largestValue = largest.info.value;
       const largestTrump = largest.info.trump;
 
       /**
        * Largest card should be replaced in the following cases:
-       * - Current card has the leading suit and largest card is not trump; current card has larger value
+       * - Current card has the leading suit and largest card is not trump;
+       *   and current card has larger value
        * - Current card is trump and largest card is not trump
        * - Current card is trump and largest card is trump; current card has larger value
        */
@@ -93,9 +92,8 @@ class Game {
         largest = card;
         leadingSuit = trump;
       }
-
       point += card.info.point;
-    }
+    });
 
     this.scores[largest.player - 1] += point;
     return largest;
@@ -114,6 +112,6 @@ class Game {
   getScores() {
     return this.scores;
   }
-};
+}
 
 module.exports = Game;

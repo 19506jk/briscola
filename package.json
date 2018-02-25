@@ -22,7 +22,7 @@
     "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "server-test": "mocha server/tests/"
+    "server-test": "mocha server/tests/ & ./node_modules/.bin/eslint server/**/*.js"
   },
   "devDependencies": {
     "eslint": "^4.18.1",
