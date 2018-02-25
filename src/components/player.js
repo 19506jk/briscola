@@ -4,10 +4,7 @@ export default class Player extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hand: props.hand.map((card, index) => {
-        console.log(card);
-        console.log(index);
-      }),
+      hand: props.hand.map((card, index) => card),
       cardWithPoints: []
     };
   }
